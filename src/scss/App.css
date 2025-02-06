@@ -37,7 +37,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 10px 15px;
-  background-color: #e6eaf1;
+  background: radial-gradient(ellipse at center, #ffffff 0%, #cbcaf9 100%);
   border-radius: 50px;
   font-size: 14px;
   color: grey;
@@ -160,6 +160,9 @@ body {
 .main-container .main-bottom .search-box img {
   width: 24px;
   cursor: pointer;
+}
+.main-container .main-bottom .search-box img:hover {
+  filter: invert(87%) sepia(12%) saturate(500%) hue-rotate(240deg) brightness(105%) contrast(95%);
 }
 .main-container .main-bottom .search-box input {
   flex: 1;
