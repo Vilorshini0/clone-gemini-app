@@ -1,5 +1,13 @@
 //import React from 'react'
 import {assets} from "../../assets/assets"
+import model from "../../config/gemini";
+
+const add = async () => {
+    const prompt = "what does sun means";
+
+    const result = await model.generateContent(prompt);
+    console.log(result.response.text());
+};
 
 const Main = () => {
   return (
@@ -38,7 +46,7 @@ const Main = () => {
                     <div>
                         <img src={assets.gallery_icon} alt="" />
                         <img src={assets.mic_icon} alt="" />
-                        <img src={assets.send_icon} alt="" />
+                        <img src={assets.send_icon} onClick={add} alt="" />
                     </div>
                 </div>
                 <p className="bottom-info">
