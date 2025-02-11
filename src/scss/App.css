@@ -182,4 +182,12 @@ body {
   margin: 15px auto;
   text-align: center;
   font-weight: 300;
+}
+.main-container .result {
+  padding: 0px 5%;
+  max-height: 70vh;
+  overflow-y: scroll;
+}
+.main-container .result::-webkit-scrollbar {
+  display: none;
 }/*# sourceMappingURL=App.css.map */
