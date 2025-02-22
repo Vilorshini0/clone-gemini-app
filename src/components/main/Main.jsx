@@ -7,6 +7,13 @@ const Main = () => {
     const [recentPrompt, setRecentPrompt] = useState("");
     const [resultText, setResultText] = useState("");
     const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+
+    const delayPara = (index,nextWord) => {
+        setTimeout(function () {
+            setResultText(prev=>prev+nextWord);
+        },50*index)
+    }
 
     const handleSubmit = async (event) => {
         let prompt = inputValue;
@@ -21,10 +28,29 @@ const Main = () => {
 
         setRecentPrompt(prompt); // Update recent prompt display
         setSubmitted(true); // Hide cards and show result
+        setLoading(true); // Add loader before showing show result
 
         const result = await model.generateContent(prompt);
         const responseText = await result.response.text();
-        setResultText(responseText); // Update generated result display
+        let responseArray = responseText.split("**");
+        let newResponse;
+        for(let i = 0 ; i < responseArray.length; i++)
+        {
+            if (i === 0 || i%2 !==1) {
+                newResponse += responseArray[i];
+            } else {
+                newResponse += "<b>"+responseArray[i]+"</b>";
+            }
+        }
+        let newResponse2 = newResponse.split("*").join("</br>");
+        let newResponseArray = newResponse2.split(" ");
+        for(let i=0; i<newResponseArray.length; i++)
+        {
+            const nextWord = newResponseArray[i];
+            delayPara(i,nextWord+" ")
+        }
+        //setResultText(newResponse2); // Update generated result display
+        setLoading(false);
     };
 
     const handleKeyDown = (event) => {
@@ -43,7 +69,7 @@ const Main = () => {
                 {!submitted ? (
                     <>
                         <div className="greet">
-                            <p><span>Hello, Vilor.</span></p>
+                            <p><span>Hello, {name}.</span></p>
                             <p>How can I help you today?</p>
                         </div>
                         <div className="cards">
@@ -73,7 +99,14 @@ const Main = () => {
                         </div>
                         <div className="result-data">
                             <img src={assets.gemini_icon} alt="" />
-                            <p dangerouslySetInnerHTML={{ __html: resultText }}></p>
+                            {loading
+                            ?<div className="loader">
+                                <hr />
+                                <hr />
+                                <hr />
+                            </div>
+                            :<p dangerouslySetInnerHTML={{ __html: resultText }}></p>
+                            }
                         </div>
                     </div>
                 )}

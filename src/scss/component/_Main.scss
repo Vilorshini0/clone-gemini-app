@@ -128,12 +128,56 @@
     }
 
     .result {
+        display: flex;
+        flex-direction: column;
         padding: 0px 5%;
         max-height: 70vh;
         overflow-y: scroll;
+        animation: fadeIn 1.5s;
+        gap: 1rem;
 
         &::-webkit-scrollbar {
             display: none;
+        }
+
+        div {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+
+            &.result-title {
+                flex-direction: row-reverse;
+            }
+
+            img {
+                width: 40px;
+                border-radius: 50%;
+            }
+    
+            p {
+                margin-right: 1rem;
+                border-radius: 20px;
+                background-color: #cbcaf9;
+                padding: 1rem;
+            }
+        }
+
+        .loader {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            hr {
+                border-radius: 4px;
+                border: none;
+                background-color: #ff7373;
+                background: linear-gradient(to right,#cbcaf9,#ffffff, #cbcaf9);
+                background-size: 800px 50px;
+                height: 20px;
+                width: 100%;
+                animation: loader 3s infinite linear;
+            }
         }
     }
 }
