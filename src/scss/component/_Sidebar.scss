@@ -45,23 +45,42 @@
         align-items: start;
         gap: 10px;
         padding: 10px;
-        padding-right: 40px;
         border-radius: 50px;
         color: #282828;
         cursor: pointer;
+        border: none;
+
+        p {
+            font-family: Outfit;
+            font-size: 16px;
+        }
 
         &:hover {
             background-color: #e2e6eb;
         }
     }
 
-    .bottom {
-        display: flex;
-        flex-direction: column;
+    // .bottom {
+    //     display: flex;
+    //     flex-direction: column;
 
-        .bottom-item {
-            padding-right: 10px;
-            cursor: pointer;
-        }
+    //     .bottom-item {
+    //         padding-right: 10px;
+    //         cursor: pointer;
+            
+    //         button {
+    //             border: none;
+
+    //             &:hover {
+    //                 background-color: #e2e6eb;
+    //             }
+    //         }
+    //     }
+    // }
+}
+
+.darkMode {
+    .sidebar {
+        
     }
 }

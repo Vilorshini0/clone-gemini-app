@@ -1,0 +1,118 @@
+.settingLightbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    z-index: 1;
+    height: 15rem;
+    width: 25rem;
+    bottom: 0;
+    right: -25rem;
+    background: #f0f4f9;
+    border-radius: 50px 0 0 50px;
+    padding: 2rem 1.5rem;
+    transition: right 0.5s ease-in-out;
+    box-shadow: -8px -8px 15px rgba(0, 0, 0, 0.3);
+
+    &.actif {
+        right: 0;
+    }
+    
+    button {
+        border: 1px solid black;
+        border-radius: 50px;
+        background-color: transparent;
+        width: 100%;
+        padding: 0.5rem 1rem;
+        align-items: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #e2e6eb;
+        }
+    }
+    
+    .closebutton {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        width: auto;
+        padding: 0;
+        border: none;
+        font-size: 20px;
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+
+    .delete,
+    .changeColor {
+        display: flex;
+        justify-content: center;
+
+        img {
+            height: 19px;
+            width: auto;
+        }
+    }
+
+    .theme {
+        text-align: center;
+
+        >p {
+            margin: 1rem 0;
+        }
+
+        div {
+            display: flex;
+            column-gap: 2%;
+
+            button {
+                justify-content: space-between;
+            }
+        }
+    }
+
+
+    // .delete,
+    // .theme {
+    //     p {
+    //         color: #585858;
+    //         font-size: 17px;
+    //     }
+
+    //     img {
+    //         width: 20px;
+    //         padding: 5px;
+    //         position: absolute;
+    //         background-color: white;
+    //         border-radius: 20px;
+    //         display: none;
+    //     }
+
+        
+    // }
+    // .delte,
+    // .theme {
+    //     display: flex            ;
+    //     flex-direction: column;
+    //     animation: fadeIn 1.5s;
+        
+    // }
+
+    // .changeColor {
+    //     display: flex;
+    //     align-items: start;
+    //     gap: 10px;
+    //     padding: 10px;
+    //     padding-right: 40px;
+    //     border-radius: 50px;
+    //     color: #282828;
+    //     cursor: pointer;
+
+    //     img {
+    //         width: 20px;
+    //     }
+    // }
+}

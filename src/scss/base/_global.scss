@@ -13,7 +13,22 @@
 }
 
 body {
-    background: -webkit-linear-gradient(60deg,#565bf3,#ff5546);
+    #App {
+        display: flex;
+        width: 100%;
+
+        &.original {
+            background: -webkit-linear-gradient(60deg,#565bf3,#ff5546);
+        }
+
+        &.dark {
+            background-color: gray;
+        }
+
+        &.light {
+            background-color: white;
+        }
+    }
 }
 
 @keyframes fadeIn {

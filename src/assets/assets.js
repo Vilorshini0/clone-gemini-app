@@ -13,6 +13,10 @@ import message_icon from './message_icon.png'
 import code_icon from './code_icon.png'
 import send_icon from './send_icon.png'
 import gemini_icon from './gemini_icon.png'
+import delete_icon from './delete_icon.png'
+import light_mode_icon from './light_mode_icon.png'
+import dark_mode_icon from './dark_mode_icon.png'
+import original_icon from './original_icon.png'
 
 export const assets = {
     history_icon,
@@ -29,5 +33,9 @@ export const assets = {
     message_icon,
     code_icon,
     send_icon,
-    gemini_icon
+    gemini_icon,
+    delete_icon,
+    light_mode_icon,
+    dark_mode_icon,
+    original_icon
 }

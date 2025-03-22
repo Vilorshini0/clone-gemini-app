@@ -12,8 +12,18 @@
   animation: fadeIn 1.5s;
 }
 
-body {
+body #App {
+  display: flex;
+  width: 100%;
+}
+body #App.original {
   background: -webkit-linear-gradient(60deg, #565bf3, #ff5546);
+}
+body #App.dark {
+  background-color: gray;
+}
+body #App.light {
+  background-color: white;
 }
 
 @keyframes fadeIn {
@@ -73,21 +83,17 @@ body {
   align-items: start;
   gap: 10px;
   padding: 10px;
-  padding-right: 40px;
   border-radius: 50px;
   color: #282828;
   cursor: pointer;
+  border: none;
+}
+.sidebar .recent-entry p {
+  font-family: Outfit;
+  font-size: 16px;
 }
 .sidebar .recent-entry:hover {
   background-color: #e2e6eb;
-}
-.sidebar .bottom {
-  display: flex;
-  flex-direction: column;
-}
-.sidebar .bottom .bottom-item {
-  padding-right: 10px;
-  cursor: pointer;
 }
 
 .main {
@@ -246,4 +252,72 @@ body {
   height: 20px;
   width: 100%;
   animation: loader 3s infinite linear;
+}
+
+.settingLightbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  z-index: 1;
+  height: 15rem;
+  width: 25rem;
+  bottom: 0;
+  right: -25rem;
+  background: #f0f4f9;
+  border-radius: 50px 0 0 50px;
+  padding: 2rem 1.5rem;
+  transition: right 0.5s ease-in-out;
+  box-shadow: -8px -8px 15px rgba(0, 0, 0, 0.3);
+}
+.settingLightbox.actif {
+  right: 0;
+}
+.settingLightbox button {
+  border: 1px solid black;
+  border-radius: 50px;
+  background-color: transparent;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  align-items: center;
+  cursor: pointer;
+}
+.settingLightbox button:hover {
+  background-color: #e2e6eb;
+}
+.settingLightbox .closebutton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: auto;
+  padding: 0;
+  border: none;
+  font-size: 20px;
+}
+.settingLightbox .closebutton:hover {
+  background-color: transparent;
+}
+.settingLightbox .delete,
+.settingLightbox .changeColor {
+  display: flex;
+  justify-content: center;
+}
+.settingLightbox .delete img,
+.settingLightbox .changeColor img {
+  height: 19px;
+  width: auto;
+}
+.settingLightbox .theme {
+  text-align: center;
+}
+.settingLightbox .theme > p {
+  margin: 1rem 0;
+}
+.settingLightbox .theme div {
+  display: flex;
+  -moz-column-gap: 2%;
+       column-gap: 2%;
+}
+.settingLightbox .theme div button {
+  justify-content: space-between;
 }/*# sourceMappingURL=App.css.map */

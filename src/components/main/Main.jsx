@@ -7,9 +7,8 @@ const Main = () => {
     const [recentPrompt, setRecentPrompt] = useState("");
     const [resultText, setResultText] = useState("");
     const [submitted, setSubmitted] = useState(false);
-    const [loading, setLoading] = useState(false);
-
-    const delayPara = (index,nextWord) => {
+    const [loading, setLoading] = useState(false); // resultTEXT loading animation
+    const delayPara = (index,nextWord) => { // text deplay display animation
         setTimeout(function () {
             setResultText(prev=>prev+nextWord);
         },50*index)
@@ -49,7 +48,7 @@ const Main = () => {
             const nextWord = newResponseArray[i];
             delayPara(i,nextWord+" ")
         }
-        //setResultText(newResponse2); // Update generated result display
+        setResultText(newResponse2); // Update generated result display
         setLoading(false);
     };
 
@@ -69,7 +68,7 @@ const Main = () => {
                 {!submitted ? (
                     <>
                         <div className="greet">
-                            <p><span>Hello, {name}.</span></p>
+                            <p><span>Hello, Vilor.</span></p>
                             <p>How can I help you today?</p>
                         </div>
                         <div className="cards">
@@ -120,8 +119,6 @@ const Main = () => {
                             onKeyDown={handleKeyDown}
                         />
                         <div>
-                            <img src={assets.gallery_icon} alt="Gallery Icon" />
-                            <img src={assets.mic_icon} alt="Mic Icon" />
                             <img src={assets.send_icon} onClick={handleSubmit} alt="Send Icon" />
                         </div>
                     </div>
