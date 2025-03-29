@@ -2,7 +2,7 @@ import {useState} from 'react'
 import {assets} from "../../assets/assets"
 import useThemeStore from "../../stores/themeStore"
 
-const Sidebar = () => {
+const SidebarView = () => {
     const [extended,setExtended] = useState(false);
     const {updateThemeDark, updateThemeLight, updateThemeOriginal} = useThemeStore();
 
@@ -73,4 +73,4 @@ const Sidebar = () => {
     )
 }
 
-export default Sidebar
+export default SidebarView

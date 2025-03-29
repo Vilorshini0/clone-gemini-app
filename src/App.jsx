@@ -1,16 +1,16 @@
 //import React from 'react'
 import Main from "./components/main/Main"
-import Sidebar from "./components/sidebar/Sidebar"
 import "./scss/App.css"
 import "./config/gemini"
 import useThemeStore from "./stores/themeStore"
+import SidebarView from "./components/sidebar/SidebarView"
 
 const App = () => {
   const {theme} = useThemeStore();
 
   return (
     <section id="App" className={theme}>
-      <Sidebar/>
+      <SidebarView/>
       <Main/>
     </section>
   )
