@@ -16,9 +16,9 @@ const SidebarView = () => {
 
 
     return (
-        <div className='sidebar'>
+        <nav className='sidebar'>
             {/* Sidebar top */}
-            <div className='top'>
+            <section className='top'>
                 <img onClick={()=>setExtended(prev=>!prev)} className="menu" src={assets.menu_icon} alt="" />
                 
                 {extended
@@ -31,9 +31,9 @@ const SidebarView = () => {
                         </div>
                     </div>
                 }
-            </div>
+            </section>
             {/* Sidebar bottom */}
-            <div className="bottom">
+            <section className="bottom">
                 <button className="bottom-item recent-entry about">
                     <img src={assets.question_icon} title="About" />
                     {extended  && <p>Help</p>}
@@ -42,8 +42,8 @@ const SidebarView = () => {
                         <img src={assets.setting_icon} title="Setting" />
                     {extended  && <p>Settings</p>}
                 </button>
-            </div>
-            <div className="settingLightbox">
+            </section>
+            <section className="settingLightbox">
                 <button className="closebutton" onClick={closeSetting}>X</button>
                 <button className="delete">
                     <p>Delete search history</p>
@@ -66,8 +66,8 @@ const SidebarView = () => {
                         </button>
                     </div>
                 </div>
-            </div>
-        </div>
+            </section>
+        </nav>
 
         
     )

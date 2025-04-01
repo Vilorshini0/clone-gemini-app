@@ -9,10 +9,10 @@ const App = () => {
   const {theme} = useThemeStore();
 
   return (
-    <section id="App" className={theme}>
+    <main id="App" className={theme}>
       <SidebarView/>
       <Main/>
-    </section>
+    </main>
   )
 }
 

@@ -59,19 +59,19 @@ const Main = () => {
     };
 
     return (
-        <div className="main">
-            <div className="nav">
+        <section className="main">
+            <header className="nav">
                 <p>Gemini</p>
                 <img src={assets.user_icon} alt="User Icon" />
-            </div>
-            <div className="main-container">
+            </header>
+            <article className="main-container">
                 {!submitted ? (
                     <>
-                        <div className="greet">
-                            <p><span>Hello, Vilor.</span></p>
-                            <p>How can I help you today?</p>
-                        </div>
-                        <div className="cards">
+                        <header className="greet">
+                            <h1><span>Hello, Vilor.</span></h1>
+                            <h2>How can I help you today?</h2>
+                        </header>
+                        <section className="cards">
                             <div onClick={handleSubmit} className="card">
                                 <p>Suggest beautiful places to see on an upcoming road trip</p>
                                 <img src={assets.compass_icon} alt="Compass Icon" />
@@ -88,10 +88,14 @@ const Main = () => {
                                 <p>Improve the readability of the following code</p>
                                 <img src={assets.code_icon} alt="Code Icon" />
                             </div>
-                        </div>
+                            <details>
+                                <summary>this is a test</summary>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus commodi quisquam deleniti modi magni beatae nulla illo a! Quidem, nihil.</p>
+                            </details>
+                        </section>
                     </>
                 ):(
-                    <div className="result">
+                    <section className="result">
                         <div className="result-title">
                             <img src={assets.user_icon} alt="" />
                             <p>{recentPrompt}</p>
@@ -107,10 +111,10 @@ const Main = () => {
                             :<p dangerouslySetInnerHTML={{ __html: resultText }}></p>
                             }
                         </div>
-                    </div>
+                    </section>
                 )}
-                <div className="main-bottom">
-                    <div className="search-box">
+                <section className="main-bottom">
+                    <section className="search-box">
                         <input 
                             type="text" 
                             placeholder="Enter a prompt here" 
@@ -121,13 +125,13 @@ const Main = () => {
                         <div>
                             <img src={assets.send_icon} onClick={handleSubmit} alt="Send Icon" />
                         </div>
-                    </div>
-                    <p className="bottom-info">
+                    </section>
+                    <footer className="bottom-info">
                         Gemini may display inaccurate info, including about people, so double-check its responses. Your privacy and Gemini Apps
-                    </p>
-                </div>
-            </div>
-        </div>
+                    </footer>
+                </section>
+            </article>
+        </section>
     );
 };
 

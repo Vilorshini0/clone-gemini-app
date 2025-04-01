@@ -88,6 +88,9 @@ body #App.light {
   cursor: pointer;
   border: none;
 }
+.sidebar .recent-entry.about {
+  display: none;
+}
 .sidebar .recent-entry p {
   font-family: Outfit;
   font-size: 16px;
@@ -131,8 +134,9 @@ body #App.light {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.main-container .greet p {
+.main-container .greet h2 {
   color: white;
+  font-size: 56px;
 }
 .main-container .cards {
   display: grid;
