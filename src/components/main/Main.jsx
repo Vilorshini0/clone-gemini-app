@@ -88,10 +88,6 @@ const Main = () => {
                                 <p>Improve the readability of the following code</p>
                                 <img src={assets.code_icon} alt="Code Icon" />
                             </div>
-                            <details>
-                                <summary>this is a test</summary>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus commodi quisquam deleniti modi magni beatae nulla illo a! Quidem, nihil.</p>
-                            </details>
                         </section>
                     </>
                 ):(
